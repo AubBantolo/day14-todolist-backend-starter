@@ -1,9 +1,9 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/placeholder
+    url: jdbc:mysql://localhost:3306/demo_db
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: "placeholder"
-    password: "placeholder"
+    username: root
+    password: PearloftheOrient#140100
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     show-sql: true
