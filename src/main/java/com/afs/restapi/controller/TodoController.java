@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin
 @RestController
 @RequestMapping("/todos")
 public class TodoController {
@@ -18,7 +17,6 @@ public class TodoController {
     public TodoController(TodoService todoService) {
         this.todoService = todoService;
     }
-
     @GetMapping
     List<Todo> getAll() {
         return todoService.findAll();
@@ -29,6 +27,12 @@ public class TodoController {
     Todo create(@RequestBody Todo todo) {
         return todoService.create(todo);
     }
+
+    @PutMapping("/{id}")
+    Todo update(@PathVariable Integer id, @RequestBody Todo todo){
+        return todoService.update(id, todo);
+    }
+
 
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Integer id) {
